@@ -2,18 +2,9 @@ package com.daniel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import com.daniel.dao.UserDao;
 import com.daniel.model.User;
-import com.daniel.util.HibernateUtil;
 
 public class App {
 
