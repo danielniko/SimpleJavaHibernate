@@ -3,7 +3,7 @@ package com.daniel.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Query;
+import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -25,7 +25,7 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		} finally {
-			session.flush();
+			//session.flush();
 			session.close();
 		}
 	}
@@ -44,7 +44,7 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		} finally {
-			session.flush();
+			//session.flush();
 			session.close();
 		}
 	}
@@ -62,7 +62,7 @@ public class UserDao {
 			}
 			e.printStackTrace();
 		} finally {
-			session.flush();
+			//session.flush();
 			session.close();
 		}
 	}
@@ -77,7 +77,7 @@ public class UserDao {
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
-			session.flush();
+			//session.flush();
 			session.close();
 		}
 		return users;
@@ -91,12 +91,12 @@ public class UserDao {
 			trns = session.beginTransaction();
 			String queryString = "from User where id = :id";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", userid);
+			query.setParameter("id", userid);
 			user = (User) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
-			session.flush();
+			//session.flush();
 			session.close();
 		}
 		return user;
