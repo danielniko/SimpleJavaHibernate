@@ -68,7 +68,7 @@ public class UserDao {
 	}
 
 	public List<User> getAllUsers() {
-		List<User> users = new ArrayList<User>();
+		List<User> users = new ArrayList<>();
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
